@@ -57,4 +57,11 @@ target_link_libraries(pick_place ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 
 include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
-ad
+add_definitions(${PCL_DEFINITIONS})
+
+add_executable (pass_through src/pass_through.cpp)
+target_link_libraries (pass_through ${catkin_LIBRARIES} ${PCL_LIBRARIES})
+
+include_directories(SYSTEM ${THIS_PACKAGE_INCLUDE_DIRS} ${Boost_INCLUDE_DIR} ${EIGEN3_INCLUDE_DIRS})
+include_directories(${catkin_INCLUDE_DIRS})
+link
