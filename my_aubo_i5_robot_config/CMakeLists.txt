@@ -75,4 +75,7 @@ install(DIRECTORY config DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 ##add_subdirectory(/home/nicholasward2/catkin_ws/src/moveit_tutorials/doc/kinematics)
 ##add_subdirectory(/home/nicholasward2/catkin_ws/src/moveit_tutorials/doc/robot_model_and_robot_state)
 ##add_subdirectory(/home/nicholasward2/catkin_ws/src/moveit_tutorials/doc/planning)
-##add_subdirectory(/home/
+##add_subdirectory(/home/nicholasward2/catkin_ws/src/moveit_tutorials/doc/planning_scene)
+##add_subdirectory(/home/nicholasward2/catkin_ws/src/moveit_tutorials/doc/planning_scene_ros_api)
+##add_subdirectory(/home/nicholasward2/catkin_ws/src/moveit_tutorials/doc/motion_planning_api)
+##add_subdirectory(/home/nicholasward2/catkin_
