@@ -85,4 +85,6 @@ install(DIRECTORY config DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 ##add_subdirectory(/home/nicholasward2/catkin_ws/src/moveit_tutorials/doc/state_display)
 ##add_subdirectory(/home/nicholasward2/catkin_ws/src/moveit_tutorials/doc/interactivity)
 ##add_subdirectory(/home/nicholasward2/catkin_ws/src/moveit_tutorials/doc/pick_place)
-##add_subdirectory
+##add_subdirectory(/home/nicholasward2/catkin_ws/src/moveit_tutorials/doc/perception_pipeline)
+
+
