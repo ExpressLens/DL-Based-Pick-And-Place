@@ -1,0 +1,4 @@
+controller_list:
+  - name: fake_aubo_arm_controller
+    joints:
+      - shoulder_join
