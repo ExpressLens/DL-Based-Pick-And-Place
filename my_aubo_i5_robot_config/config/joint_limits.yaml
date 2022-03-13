@@ -18,4 +18,15 @@ joint_limits:
     has_acceleration_limits: false
     max_acceleration: 0
   shoulder_joint:
-    has
+    has_velocity_limits: false
+    max_velocity: 0
+    has_acceleration_limits: false
+    max_acceleration: 0
+  upperArm_joint:
+    has_velocity_limits: false
+    max_velocity: 0
+    has_acceleration_limits: false
+    max_acceleration: 0
+  wrist1_joint:
+    has_velocity_limits: false
+    
