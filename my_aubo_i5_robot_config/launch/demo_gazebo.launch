@@ -26,3 +26,10 @@
 
   <!-- launch the gazebo simulator and spawn the robot -->
   <include file="$(find my_aubo_i5_robot_config)/launch/gazebo.launch" >
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
+    <arg name="urdf_path" value="$(arg urdf_path)"/>
+  </include>
+
+  <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
+  <inclu
