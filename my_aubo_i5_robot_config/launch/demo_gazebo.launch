@@ -32,4 +32,12 @@
   </include>
 
   <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
-  <inclu
+  <include file="$(find my_aubo_i5_robot_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="false"/>
+  </include>
+
+  <!-- If needed, broadcast static tf for robot root -->
+  
+
+  <!-- We do not have a robot connected, so publish fake joint states -->
+  <node name="joint_state_publi
