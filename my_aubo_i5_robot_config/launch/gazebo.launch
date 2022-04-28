@@ -1,2 +1,9 @@
 <?xml version="1.0"?>
-<laun
+<launch>
+  <arg name="paused" default="false"/>
+  <arg name="gazebo_gui" default="true"/>
+  <arg name="urdf_path" default="$(find aubo_description)/urdf/aubo_i5_gripper.urdf"/>
+
+  <!-- startup simulated world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" default="worlds/empty.wor
