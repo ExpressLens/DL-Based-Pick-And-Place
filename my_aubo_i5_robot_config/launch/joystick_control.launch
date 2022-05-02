@@ -1,2 +1,8 @@
 <launch>
-  <!-- See m
+  <!-- See moveit_ros/visualization/doc/joystick.rst for documentation -->
+
+  <arg name="dev" default="/dev/input/js0" />
+
+  <!-- Launch joy node -->
+  <node pkg="joy" type="joy_node" name="joy">
+    <param name="dev" value="$(arg dev)" /> <!-- Customize this to match the location your joys
