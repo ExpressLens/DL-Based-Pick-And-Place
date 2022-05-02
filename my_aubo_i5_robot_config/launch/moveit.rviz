@@ -7,4 +7,21 @@ Panels:
         - /Global Options1
         - /MotionPlanning1
         - /TF1
-        - /TF1/Frame
+        - /TF1/Frames1
+      Splitter Ratio: 0.742560029
+    Tree Height: 403
+  - Class: rviz/Help
+    Name: Help
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+Toolbars:
+  toolButtonStyle: 2
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class:
