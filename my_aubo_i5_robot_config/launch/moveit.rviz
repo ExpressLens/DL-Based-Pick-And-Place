@@ -127,4 +127,15 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
-          
+            Value: true
+          pedestal_Link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          shoulder_Link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          u
