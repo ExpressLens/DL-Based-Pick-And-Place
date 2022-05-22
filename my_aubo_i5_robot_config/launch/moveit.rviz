@@ -106,4 +106,15 @@ Visualization Manager:
           gripper_finger1_knuckle_link:
             Alpha: 1
             Show Axes: false
-            Sh
+            Show Trail: false
+            Value: true
+          gripper_finger2_finger_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_finger2_finger_tip_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            
