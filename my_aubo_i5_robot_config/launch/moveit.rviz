@@ -150,4 +150,17 @@ Visualization Manager:
           wrist1_Link:
             Alpha: 1
             Show Axes: false
-            Show Trail: fal
+            Show Trail: false
+            Value: true
+          wrist2_Link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wrist3_Link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+        Loop Animation: true
+        Robot Alp
