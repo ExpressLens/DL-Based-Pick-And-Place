@@ -180,4 +180,12 @@ Visualization Manager:
         TextHeight: 0.0799999982
       Planning Request:
         Colliding Link Color: 255; 0; 0
-        Goa
+        Goal State Alpha: 1
+        Goal State Color: 250; 128; 0
+        Interactive Marker Size: 0
+        Joint Violation Color: 255; 0; 255
+        Planning Group: aubo_arm
+        Query Goal State: true
+        Query Start State: false
+        Show Workspace: false
+        Start State Alpha: 1
