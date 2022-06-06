@@ -257,4 +257,16 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          gripper_finger2_
+          gripper_finger2_knuckle_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          pedestal_Link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          shoulder_Link:
+            Alpha: 1
+  
