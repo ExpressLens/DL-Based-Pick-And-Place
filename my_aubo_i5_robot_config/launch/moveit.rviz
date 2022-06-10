@@ -317,4 +317,15 @@ Visualization Manager:
         camera_link:
           Value: false
         camera_rgb_frame:
-      
+          Value: false
+        camera_rgb_optical_frame:
+          Value: true
+        foreArm_Link:
+          Value: false
+        grasp_pose_frame:
+          Value: true
+        gripper_base_link:
+          Value: false
+        gripper_finger1_finger_link:
+          Value: false
+        gripper_finger
