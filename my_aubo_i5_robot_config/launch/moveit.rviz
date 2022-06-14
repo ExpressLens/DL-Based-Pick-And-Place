@@ -337,4 +337,16 @@ Visualization Manager:
         gripper_finger2_finger_link:
           Value: false
         gripper_finger2_finger_tip_link:
-   
+          Value: false
+        gripper_finger2_inner_knuckle_link:
+          Value: false
+        gripper_finger2_knuckle_link:
+          Value: false
+        pedestal_Link:
+          Value: false
+        shoulder_Link:
+          Value: false
+        upperArm_Link:
+          Value: false
+        world:
+          Value: fals
