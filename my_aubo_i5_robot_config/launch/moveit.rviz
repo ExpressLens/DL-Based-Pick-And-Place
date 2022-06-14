@@ -349,4 +349,19 @@ Visualization Manager:
         upperArm_Link:
           Value: false
         world:
-          Value: fals
+          Value: false
+        wrist1_Link:
+          Value: false
+        wrist2_Link:
+          Value: false
+        wrist3_Link:
+          Value: false
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        world:
+          pedestal_Link:
+  
