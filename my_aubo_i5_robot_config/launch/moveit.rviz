@@ -364,4 +364,14 @@ Visualization Manager:
       Tree:
         world:
           pedestal_Link:
-  
+            base_link:
+              camera_rgb_optical_frame:
+                base_link_calculated:
+                  {}
+                grasp_pose_frame:
+                  {}
+              shoulder_Link:
+                upperArm_Link:
+                  foreArm_Link:
+                    wrist1_Link:
+              
