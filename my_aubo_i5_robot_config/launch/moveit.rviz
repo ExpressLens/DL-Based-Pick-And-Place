@@ -374,4 +374,10 @@ Visualization Manager:
                 upperArm_Link:
                   foreArm_Link:
                     wrist1_Link:
+                      wrist2_Link:
+                        wrist3_Link:
+                          gripper_base_link:
+                            gripper_finger1_inner_knuckle_link:
+                              gripper_finger1_finger_tip_link:
+                                {}
               
