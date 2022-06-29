@@ -466,3 +466,7 @@ Window Geometry:
   Hide Left Dock: false
   Hide Right Dock: false
   MotionPlanning:
+    collapsed: false
+  MotionPlanning - Trajectory Slider:
+    collapsed: false
+  QMainWindow State: 000000ff00000000fd0000000100000000000002ad000003bcfc0200000007fb000000100044006900730070006c006100790073010000002800000228000000d700fffffffb0000000800480065006c00700000000342000000bb0000007300fffffffb0000000a0056
