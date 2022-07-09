@@ -1,0 +1,4 @@
+<launch>
+
+  <!-- OMPL Plugin for MoveIt! -->
+  <arg name="planning_plugin" value="
