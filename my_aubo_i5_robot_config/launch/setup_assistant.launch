@@ -1,1 +1,10 @@
-<!-- Re-launch the MoveIt! Setup Assistan
+<!-- Re-launch the MoveIt! Setup Assistant with this configuration package already loaded -->
+<launch>
+
+  <!-- Debug Info -->
+  <arg name="debug" default="false" />
+  <arg unless="$(arg debug)" name="launch_prefix" value="" />
+  <arg     if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args" />
+
+  <!-- Run -->
+  <node 
