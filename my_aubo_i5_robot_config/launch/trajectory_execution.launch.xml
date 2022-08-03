@@ -13,4 +13,8 @@
   <!-- Allowed joint-value tolerance for validation that trajectory's first point matches current robot state -->
   <param name="trajectory_execution/allowed_start_tolerance" value="0.01"/> <!-- default 0.01 -->
 
-  <!-- Load the rob
+  <!-- Load the robot specific controller manager; this sets the moveit_controller_manager ROS parameter -->
+  <arg name="moveit_controller_manager" default="aubo_i5" />
+  <include file="$(find my_aubo_i5_robot_config)/launch/$(arg moveit_controller_manager)_moveit_controller_manager.launch.xml" />
+
+</launch>
