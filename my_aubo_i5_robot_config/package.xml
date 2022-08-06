@@ -4,4 +4,11 @@
   <version>0.3.0</version>
   <description>
      An automatically generated package with all the configuration and launch files for using the aubo_i5 with the MoveIt! Motion Planning Framework
-  
+  </description>
+  <author email="nickhward@gmail.com">nick</author>
+  <maintainer email="nickhward@gmail.com">nick</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://moveit.ros.org/</url>
+  <url type="bugtracker">https://github.com/ros-planning/moveit/issues<
