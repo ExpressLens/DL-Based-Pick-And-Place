@@ -49,4 +49,11 @@
   <run_depend>joy</run_depend>
   <run_depend>pcl_ros</run_depend>
   <run_depend>pcl_conversions</run_depend>
- 
+  <run_depend>rosbag</run_depend>
+  <run_depend>tf2_ros</run_depend>
+  <run_depend>tf2_eigen</run_depend>
+  <run_depend>tf2_geometry_msgs</run_depend>
+  <build_depend>darknet_ros</build_depend>
+  <run_depend>darknet_ros</run_depend>
+  <build_depend>darknet_ros_msgs</build_depend>
+  <run_depend>darknet_
