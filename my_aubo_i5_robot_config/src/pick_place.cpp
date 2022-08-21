@@ -114,3 +114,106 @@ void place(moveit::planning_interface::MoveGroupInterface& group)
 
   /* While placing it is the exact location of the center of the object. */
   place_location[0].place_pose.pose.position.x = 0;
+  place_location[0].place_pose.pose.position.y = 0.5;
+  place_location[0].place_pose.pose.position.z = 0.5;
+
+  // Setting pre-place approach
+  // ++++++++++++++++++++++++++
+  /* Defined with respect to frame_id */
+  place_location[0].pre_place_approach.direction.header.frame_id = "world";
+  /* Direction is set as negative z axis */
+  place_location[0].pre_place_approach.direction.vector.z = -1.0;
+
+  place_location[0].pre_place_approach.min_distance = 0.095;
+  place_location[0].pre_place_approach.desired_distance = 0.115;
+
+  // Setting post-grasp retreat
+  // ++++++++++++++++++++++++++
+  /* Defined with respect to frame_id */
+  place_location[0].post_place_retreat.direction.header.frame_id = "world";
+  /* Direction is set as negative y axis */
+  place_location[0].post_place_retreat.direction.vector.x = -1.0;
+  place_location[0].post_place_retreat.min_distance = 0.1;
+  place_location[0].post_place_retreat.desired_distance = 0.25;
+
+  // Setting posture of eef after placing object
+  // +++++++++++++++++++++++++++++++++++++++++++
+  /* Similar to the pick case */
+  openGripper(place_location[0].post_place_posture);
+
+  // Set support surface as table2.
+  group.setSupportSurfaceName("table2");
+  // Call place to place the object using the place locations given.
+  group.place("object", place_location);
+  // END_SUB_TUTORIAL
+}
+
+void addCollisionObjects(moveit::planning_interface::PlanningSceneInterface& planning_scene_interface)
+{
+  // BEGIN_SUB_TUTORIAL table1
+  //
+  // Creating Environment
+  // ^^^^^^^^^^^^^^^^^^^^
+  // Create vector to hold 3 collision objects.
+  std::vector<moveit_msgs::CollisionObject> collision_objects;
+  collision_objects.resize(1);
+
+  // Add the first table where the cube will originally be kept.
+  collision_objects[0].id = "table1";
+  collision_objects[0].header.frame_id = "base_link";
+
+  /* Define the primitive and its dimensions. */
+  collision_objects[0].primitives.resize(1);
+  collision_objects[0].primitives[0].type = collision_objects[0].primitives[0].BOX;
+  collision_objects[0].primitives[0].dimensions.resize(3);
+  collision_objects[0].primitives[0].dimensions[0] = 1.0;
+  collision_objects[0].primitives[0].dimensions[1] = 1.0;
+  collision_objects[0].primitives[0].dimensions[2] = 0.47;
+
+  /* Define the pose of the table. */
+  collision_objects[0].primitive_poses.resize(1);
+  collision_objects[0].primitive_poses[0].position.x = -1.0;
+  collision_objects[0].primitive_poses[0].position.y = 0.0;
+  collision_objects[0].primitive_poses[0].position.z = -0.30;
+  collision_objects[0].primitive_poses[0].orientation.x = 5;
+  // END_SUB_TUTORIAL
+
+  collision_objects[0].operation = collision_objects[0].ADD;
+
+  
+
+  planning_scene_interface.applyCollisionObjects(collision_objects);
+}
+
+int main(int argc, char** argv)
+{
+  ros::init(argc, argv, "aubo_arm_pick_place");
+  ros::NodeHandle nh;
+  //ros::NodeHandle m_nh;
+
+//  ros::Subscriber sub = m_nh.subscribe("/detect_grasps/plot_grasps", 1, cloud_cb);
+  //ros::spin();
+  //ros::WallDuration(10.0).sleep();
+
+  ros::AsyncSpinner spinner(1);
+  spinner.start();
+
+  ros::WallDuration(1.0).sleep();
+  moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
+  moveit::planning_interface::MoveGroupInterface group("aubo_arm");
+  group.setPlanningTime(45.0);
+
+  //addCollisionObjects(planning_scene_interface);
+
+  // Wait a bit for ROS things to initialize
+  ros::WallDuration(1.0).sleep();
+
+  pick(group);
+
+  ros::WallDuration(1.0).sleep();
+
+  //place(group);
+
+  ros::waitForShutdown();
+  return 0;
+}
