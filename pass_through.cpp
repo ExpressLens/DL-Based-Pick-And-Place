@@ -21,4 +21,12 @@
 #include <pcl/kdtree/kdtree.h>
 #include <pcl/segmentation/extract_clusters.h>
 #include <pcl/octree/octree_search.h>
-#include <darknet_ros_msgs/Boundin
+#include <darknet_ros_msgs/BoundingBoxes.h>
+#include <darknet_ros_msgs/BoundingBox.h>
+#include <Eigen/Dense>
+#include <message_filters/subscriber.h>
+#include <message_filters/synchronizer.h>
+#include <message_filters/time_synchronizer.h>
+#include <string>
+#include <message_filters/sync_policies/approximate_time.h>
+#include <message_filt
