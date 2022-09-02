@@ -42,4 +42,13 @@ int maxX;
 int maxY;
 int YoloCenterPointX;
 int YoloCenterPointY;
-//These end the callback 
+//These end the callback functions so that they don't run infinite many times. 
+int endCallback2 = 0;
+int endCallback1 = 0;
+
+//callback function to get the bounding boxe coordinates
+void cloud_cb_2(const darknet_ros_msgs::BoundingBoxesConstPtr& msg)
+{
+
+    if(endCallback2 == 0){
+        //gets user input to choose what object they want
