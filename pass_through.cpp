@@ -29,4 +29,17 @@
 #include <message_filters/time_synchronizer.h>
 #include <string>
 #include <message_filters/sync_policies/approximate_time.h>
-#include <message_filt
+#include <message_filters/sync_policies/exact_time.h>
+
+#include <pcl/filters/voxel_grid.h>
+//using namespace message_filters;
+
+ros::Publisher pub;
+//min and max pixel points from the bounding boxes created by yolo. 
+int minX;
+int minY;
+int maxX;
+int maxY;
+int YoloCenterPointX;
+int YoloCenterPointY;
+//These end the callback 
