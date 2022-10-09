@@ -74,4 +74,14 @@ void cloud_cb_2(const darknet_ros_msgs::BoundingBoxesConstPtr& msg)
                 std::cout << "bounding box minX" << minX << std::endl;
                 std::cout << "bounding box minY" << minY << std::endl;
                 std::cout << "bounding box maxX" << maxX << std::endl;
-  
+                std::cout << "bounding box maxY" << maxY << std::endl;
+                
+                //Finds the center point of x and y. 
+                YoloCenterPointX = (maxX + minX)/2;
+                YoloCenterPointY = (maxY + minY)/2;
+               
+
+            }
+        
+    }
+    endCallback2
