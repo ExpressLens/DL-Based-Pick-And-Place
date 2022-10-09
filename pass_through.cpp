@@ -63,4 +63,9 @@ void cloud_cb_2(const darknet_ros_msgs::BoundingBoxesConstPtr& msg)
             if(msg->bounding_boxes[i].Class == my_choice)
             {
                 
-   
+                
+                gets the minx and y and max x and y from the darknet_ros topic
+                minX = msg->bounding_boxes[i].xmin;
+                minY = msg->bounding_boxes[i].ymin;
+                maxX = msg->bounding_boxes[i].xmax;
+                maxY = msg->bounding_boxes[
