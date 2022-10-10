@@ -84,4 +84,15 @@ void cloud_cb_2(const darknet_ros_msgs::BoundingBoxesConstPtr& msg)
             }
         
     }
-    endCallback2
+    endCallback2 = 1;
+    }
+    
+
+}
+
+//callback function to get the pointcloud2 from the rostopic of /camera_remote/depth_registered/points
+void cloud_cb (const sensor_msgs::PointCloud2ConstPtr& cloud_msg){
+if(endCallback1 == 0){
+    
+ // Container for original & filtered data
+  pcl::PCLPointCloud2* cloud = new p
