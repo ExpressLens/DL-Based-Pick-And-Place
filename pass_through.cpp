@@ -105,4 +105,12 @@ if(endCallback1 == 0){
   pcl_conversions::toPCL(*cloud_msg, *cloud);
 
 
-  // Perform 
+  // Perform voxel grid downsampling filtering
+  pcl::VoxelGrid<pcl::PCLPointCloud2> sor;
+  sor.setInputCloud (cloudPtr);
+  sor.setLeafSize (0.01f, 0.01f, 0.01f);
+  sor.filter (*cloudFilteredPtr);
+
+
+  pcl::PointCloud<pcl::PointXYZRGB> *xyz_cloud = new pcl::PointCloud<pcl::PointXYZRGB>;
+  pcl::PointCloud<pcl::PointXYZRGB>::Ptr
