@@ -121,4 +121,9 @@ if(endCallback1 == 0){
 
   //perform passthrough filtering to remove table leg
 
-  // create a pcl 
+  // create a pcl object to hold the passthrough filtered results
+  pcl::PointCloud<pcl::PointXYZRGB> *xyz_cloud_filtered = new pcl::PointCloud<pcl::PointXYZRGB>;
+  pcl::PointCloud<pcl::PointXYZRGB>::Ptr xyzCloudPtrFiltered (xyz_cloud_filtered);
+
+  // Create the filtering object
+  pcl::PassThrough<pcl::PointXYZRGB> p
