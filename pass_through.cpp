@@ -141,4 +141,12 @@ if(endCallback1 == 0){
 
   // perform ransac planar filtration to remove table top
   pcl::ModelCoefficients::Ptr coefficients (new pcl::ModelCoefficients);
-  pcl::PointIndices::Ptr 
+  pcl::PointIndices::Ptr inliers (new pcl::PointIndices);
+  // Create the segmentation object
+  pcl::SACSegmentation<pcl::PointXYZRGB> seg1;
+  // Optional
+  seg1.setOptimizeCoefficients (true);
+  // Mandatory
+  seg1.setModelType (pcl::SACMODEL_PLANE);
+  seg1.setMethodType (pcl::SAC_RANSAC);
+  s
