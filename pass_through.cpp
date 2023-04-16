@@ -126,4 +126,13 @@ if(endCallback1 == 0){
   pcl::PointCloud<pcl::PointXYZRGB>::Ptr xyzCloudPtrFiltered (xyz_cloud_filtered);
 
   // Create the filtering object
-  pcl::PassThrough<pcl::PointXYZRGB> p
+  pcl::PassThrough<pcl::PointXYZRGB> pass;
+  pass.setInputCloud (xyzCloudPtr);
+  pass.setFilterFieldName ("z");
+  pass.setFilterLimits (.78, 1.1);
+  //pass.setFilterLimitsNegative (true);
+  pass.filter (*xyzCloudPtrFiltered);
+  
+
+  // create a pcl object to hold the ransac filtered results
+  pcl::PointCloud<pcl::PointXYZRGB> *xyz_cloud_ransac_filtered = new pcl::
