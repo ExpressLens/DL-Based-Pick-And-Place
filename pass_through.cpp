@@ -149,4 +149,14 @@ if(endCallback1 == 0){
   // Mandatory
   seg1.setModelType (pcl::SACMODEL_PLANE);
   seg1.setMethodType (pcl::SAC_RANSAC);
-  s
+  seg1.setDistanceThreshold (0.005);
+
+  seg1.setInputCloud (xyzCloudPtrFiltered);
+  seg1.segment (*inliers, *coefficients);
+
+
+  // Create the filtering object
+  pcl::ExtractIndices<pcl::PointXYZRGB> extract;
+
+  //extract.setInputCloud (xyzCloudPtrFiltered);
+  extract.setInputCloud (x
