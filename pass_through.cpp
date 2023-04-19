@@ -159,4 +159,14 @@ if(endCallback1 == 0){
   pcl::ExtractIndices<pcl::PointXYZRGB> extract;
 
   //extract.setInputCloud (xyzCloudPtrFiltered);
-  extract.setInputCloud (x
+  extract.setInputCloud (xyzCloudPtrFiltered);
+  extract.setIndices (inliers);
+  extract.setNegative (true);
+  extract.filter (*xyzCloudPtrRansacFiltered);
+
+
+
+  // perform euclidean cluster segmentation to seporate individual objects
+
+  // Create the KdTree object for the search method of the extraction
+  pcl::search::KdTree<pcl::PointXY
