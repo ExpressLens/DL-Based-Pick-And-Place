@@ -175,4 +175,10 @@ if(endCallback1 == 0){
   // create the extraction object for the clusters
   std::vector<pcl::PointIndices> cluster_indices;
   pcl::EuclideanClusterExtraction<pcl::PointXYZRGB> ec;
-  // specify eucli
+  // specify euclidean cluster parameters
+  ec.setClusterTolerance (0.02); // 2cm
+  ec.setMinClusterSize (100);
+  ec.setMaxClusterSize (25000);
+  ec.setSearchMethod (tree);
+  ec.setInputCloud (xyzCloudPtrRansacFiltered);
+  // exctract the indices pertaining to each cluster and store in a vector of pcl::
