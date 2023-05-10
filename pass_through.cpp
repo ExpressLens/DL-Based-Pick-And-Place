@@ -169,4 +169,10 @@ if(endCallback1 == 0){
   // perform euclidean cluster segmentation to seporate individual objects
 
   // Create the KdTree object for the search method of the extraction
-  pcl::search::KdTree<pcl::PointXY
+  pcl::search::KdTree<pcl::PointXYZRGB>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZRGB>);
+  tree->setInputCloud (xyzCloudPtrRansacFiltered);
+
+  // create the extraction object for the clusters
+  std::vector<pcl::PointIndices> cluster_indices;
+  pcl::EuclideanClusterExtraction<pcl::PointXYZRGB> ec;
+  // specify eucli
