@@ -181,4 +181,15 @@ if(endCallback1 == 0){
   ec.setMaxClusterSize (25000);
   ec.setSearchMethod (tree);
   ec.setInputCloud (xyzCloudPtrRansacFiltered);
-  // exctract the indices pertaining to each cluster and store in a vector of pcl::
+  // exctract the indices pertaining to each cluster and store in a vector of pcl::PointIndices
+  ec.extract (cluster_indices);
+  sensor_msgs::PointCloud2 output; 
+
+
+  pcl::PCLPointCloud2 outputPCL;
+
+  int EuclideanDistance, distance_x, distance_y;
+  int threshold = 30;
+
+pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_cluster (new pcl::PointCloud<pcl::PointXYZRGB>); 
+for (std::ve
