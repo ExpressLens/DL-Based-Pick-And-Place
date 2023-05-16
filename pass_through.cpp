@@ -192,4 +192,9 @@ if(endCallback1 == 0){
   int threshold = 30;
 
 pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_cluster (new pcl::PointCloud<pcl::PointXYZRGB>); 
-for (std::ve
+for (std::vector<pcl::PointIndices>::const_iterator it = cluster_indices.begin (); it != cluster_indices.end (); ++it) 
+{ 
+    Eigen::Vector4f centroid3D;
+    Eigen::Vector2i centroid2D;
+    Eigen::Matrix3f camera_matrix;
+    //camera matrix that was created by the intrisic camera calibration step. This will be 
