@@ -197,4 +197,8 @@ for (std::vector<pcl::PointIndices>::const_iterator it = cluster_indices.begin (
     Eigen::Vector4f centroid3D;
     Eigen::Vector2i centroid2D;
     Eigen::Matrix3f camera_matrix;
-    //camera matrix that was created by the intrisic camera calibration step. This will be 
+    //camera matrix that was created by the intrisic camera calibration step. This will be needed to translate from 3D centroid to 2D centroid
+    camera_matrix <<  547.471175, 0.000000, 313.045026, 0.000000, 547.590335, 237.016225, 0.000000, 0.000000, 1.000000;
+    
+    //puts the clusters into cloud_cluster
+    for (std::vector<int>::const_iterator pit = it->i
