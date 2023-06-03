@@ -208,4 +208,9 @@ for (std::vector<pcl::PointIndices>::const_iterator it = cluster_indices.begin (
     cloud_cluster->width = cloud_cluster->points.size (); 
     cloud_cluster->height = 1; 
     cloud_cluster->is_dense = true; 
-    //std::cout << "PointCloud repre
+    //std::cout << "PointCloud representing the Cluster: " << cloud_cluster->points.size () << " data points." << std::endl; 
+    //a pcl funciton to comput the 3D centroid and save it as centroid3D
+    pcl::compute3DCentroid(*xyzCloudPtrRansacFiltered, *it, centroid3D);
+    
+    Eigen::Vector2i pixel_position;
+    //next two lines convert c
