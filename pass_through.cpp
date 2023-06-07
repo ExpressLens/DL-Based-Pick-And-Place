@@ -213,4 +213,10 @@ for (std::vector<pcl::PointIndices>::const_iterator it = cluster_indices.begin (
     pcl::compute3DCentroid(*xyzCloudPtrRansacFiltered, *it, centroid3D);
     
     Eigen::Vector2i pixel_position;
-    //next two lines convert c
+    //next two lines convert centroid3D to pixel cordinates, and saves into variable pixel_position
+    pixel_position(0) = (int)(centroid3D(0)*camera_matrix(0,0)/centroid3D(2) + camera_matrix(0,2));
+    pixel_position(1) = (int)(centroid3D(1)*camera_matrix(1,1)/centroid3D(2) + camera_matrix(1,2));
+    
+    centroid2D = pixel_position;
+
+    //This is
