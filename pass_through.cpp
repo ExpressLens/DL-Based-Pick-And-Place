@@ -219,4 +219,8 @@ for (std::vector<pcl::PointIndices>::const_iterator it = cluster_indices.begin (
     
     centroid2D = pixel_position;
 
-    //This is
+    //This is the calculation to find the Euclidean Distance between centroids and yolo bounding box center points
+    distance_x = abs(YoloCenterPointX - centroid2D(0));
+    std::cout << "YOlo centerx " << YoloCenterPointX << std::endl;
+    std::cout << "controidx " << centroid2D(0) << std::endl;
+    std::cout <<  "The distan
