@@ -223,4 +223,8 @@ for (std::vector<pcl::PointIndices>::const_iterator it = cluster_indices.begin (
     distance_x = abs(YoloCenterPointX - centroid2D(0));
     std::cout << "YOlo centerx " << YoloCenterPointX << std::endl;
     std::cout << "controidx " << centroid2D(0) << std::endl;
-    std::cout <<  "The distan
+    std::cout <<  "The distance in x axis: " << distance_x << std::endl;
+    distance_y = abs(YoloCenterPointY - centroid2D(1));
+    std::cout <<  "The distance in y axis: " << distance_y << std::endl;
+    EuclideanDistance = sqrt(pow(distance_x, 2) + pow(distance_y, 2));
+    std::cout <<  "The aggregated distance: " << E
