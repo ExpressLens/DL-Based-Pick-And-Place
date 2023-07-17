@@ -227,4 +227,8 @@ for (std::vector<pcl::PointIndices>::const_iterator it = cluster_indices.begin (
     distance_y = abs(YoloCenterPointY - centroid2D(1));
     std::cout <<  "The distance in y axis: " << distance_y << std::endl;
     EuclideanDistance = sqrt(pow(distance_x, 2) + pow(distance_y, 2));
-    std::cout <<  "The aggregated distance: " << E
+    std::cout <<  "The aggregated distance: " << EuclideanDistance << std::endl;
+    //if object euclidean distance is less then threshhold the cluster will be published as a rostopic that we can now visualize in rviz. 
+    if(EuclideanDistance < threshold){
+        pcl::toPCLPointCloud2 (*cloud_cluster, outputPCL); 
+        pcl_conversions::fromPCL(output
