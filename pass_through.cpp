@@ -231,4 +231,16 @@ for (std::vector<pcl::PointIndices>::const_iterator it = cluster_indices.begin (
     //if object euclidean distance is less then threshhold the cluster will be published as a rostopic that we can now visualize in rviz. 
     if(EuclideanDistance < threshold){
         pcl::toPCLPointCloud2 (*cloud_cluster, outputPCL); 
-        pcl_conversions::fromPCL(output
+        pcl_conversions::fromPCL(outputPCL, output);
+        output.header.frame_id = "/camera_rgb_optical_frame";
+
+        ros::Rate loop_rate(1);
+        while(ros::ok()){
+            pub.publish(output);
+            ros::spinOnce();
+            loop_rate.sleep();
+        }
+
+    }
+    
+    //centroid2D = point3Dto_pixel(centroid3D,
