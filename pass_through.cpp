@@ -243,4 +243,24 @@ for (std::vector<pcl::PointIndices>::const_iterator it = cluster_indices.begin (
 
     }
     
-    //centroid2D = point3Dto_pixel(centroid3D,
+    //centroid2D = point3Dto_pixel(centroid3D, camera_matrix);
+
+
+}
+ //end of call back function
+endCallback1++;
+
+}
+}
+
+
+
+
+int main (int argc, char** argv){
+// Initialize ROS
+ros::init (argc, argv, "my_pcl_tutorial");
+ros::NodeHandle nh;
+ros::NodeHandle m_nh;
+
+//subscribe to the pointcloud
+ros::Subscriber sub = nh.subscribe ("/camer
