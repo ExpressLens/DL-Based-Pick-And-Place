@@ -266,4 +266,12 @@ ros::NodeHandle m_nh;
 ros::Subscriber sub = nh.subscribe ("/camera_remote/depth_registered/points", 1, cloud_cb);
 //subscribe to the bouding boxes from darknet_ros
 ros::Subscriber object_detection = m_nh.subscribe("/darknet_ros/bounding_boxes", 1, cloud_cb_2);
-//publishes the filterd point cloud clusterd of the selected object and publish is as rostopic /output_f
+//publishes the filterd point cloud clusterd of the selected object and publish is as rostopic /output_filtered_cloud.
+pub = nh.advertise<sensor_msgs::PointCloud2> ("output_filtered_cloud", 10);
+
+ros::spin();
+
+
+
+
+}
