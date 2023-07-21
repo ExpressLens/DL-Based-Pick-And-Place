@@ -20,4 +20,11 @@ file_test = open('/home/nicholasward2/darknet/build/darknet/x64/data/test.txt', 
 # Add images to train.txt and test.txt
 
 counter = 1
-index_text = round(100 / per
+index_text = round(100 / percentage_test)
+
+for path_and_filename in glob.iglob(os.path.join(current_dir, '*.jpg')):
+    title, ext = os.path.splitext(os.path.basename(path_and_filename))
+    
+    if counter == index_test:
+        counter = 1
+        file_test.write('/home/nicholasward2/darknet/build/darknet/x64/data/obj' + '/' + title + '.jp
