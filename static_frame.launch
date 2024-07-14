@@ -1,0 +1,10 @@
+
+<launch>
+
+  <node pkg="tf" type="static_transform_publisher" name="end_effector_broadcaster" args="0 0 -0.02 3.14159 0 0 aruco_marker_frame end_effector_frame  100" /> -->
+
+  <node pkg="tf" type="static_transform_publisher" name="robot_base_broadcaster" args=" -0.587032  -0.130785  0.169324  0.014030  0.076970  -1.617693  end_effector_frame base_link_calculated  100" /> 
+
+  <node pkg="tf" type="static_transform_publisher" name="cam_broadcaster" args="   -0.504  0.279  0.313  0.739  -0.276  0.188  0.585  camera_rgb_optical_frame  base_link_calculated   100" /> 
+
+</launch>
